@@ -8,36 +8,39 @@
     <title>Document</title>
 </head>
 <body>
-    <form id ="form" method="post">
-      <h1 class= "titleName">Шахматен клуб Верила- гр. Елин Пелин</h1>
-        
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" id="uname" name="uname" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
-      
-          <button type="submit">Login</button>
-         
-        </div>
-      
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <p id="wrong" style="color: red;"></p>
-        </div>
-        <h3>Среща на 00.00.0000</h3>
-        <section class="messageBackground">
-          <p class = "w3-round-large">Здравейте колеги от управителния съвет,
-
-            искаме да ви уведомим, че на 00.00.0000 в 00:00 часа ще се проведе следващият управителен съвет на шахматен клуб Верила - гр.Елин Пелин.<br>
-            <br>
-            поздрави,<br>
-            Симеон
-          </p>
-        </section>
-        <button class="buttonLogIn">Log in</button>
-      </form>
+  <div id = "backdrop"></div>
+  <div class = "modal card" id = "add-modal">
+    <div class = "modal__content">
+      <label for="usrname">User name</label>
+      <input type="text" name="usrname" id="usrname" />
+      <label for="pssword">Password</label>
+      <input type="password" name="pssword" id="pssword" />
+    </div>
+    <div class="modal__actions">
+      <button class="btn-login button--tertiary" id="btn-login-modal">Log in</button>
+      <button class="btn-cancel button--secondary" id = "btn-cancel-modal">Cancel</button>
+    </div>
+  </div>
+  <div class="publish_modal box" id="publish_modal">
+    <div class="publish_modal_textbox">
+      <div>
+      <label for="text">Съобщение</label>
+      </div>
+      <div>
+      <textarea id="text" name="new_mssg" placeholder="Ново съобщение.." class="text-box__mssg"></textarea>
+      </div>
+    </div>
+    <div class="publish_modal_buttons">
+      <button class="btn-publish button--tertiary" id="btn-publish">Публикуване</button>
+      <button class="btn-cancel button--secondary" id="btn-cancel-publish">Отказ</button>
+    </div>
+  </div>
+  <button class="publish-mssg button button--pan invisible" id="publish-mssg"><span>Ново съобщение</span></button>
+  <b class = "when-logged" id = "when-logged">Добре дошли! ♘</b>
+    <h1 class= "titleName">Шахматен клуб Верила- гр. Елин Пелин</h1>
+    <button class="btnContacts button3 button--pan" id="btn-contacts"><span>Контакти</span></button>
+    <button class="buttonLogIn button button--pan" id="btn-login-fristpage"><span>Влез</span></button>   
+    <button class="btnInfo button2 button--pan" id="btn-show-info"><span>Съобщения</span></button>    
 </body>
 <script src="app.js"></script>
 </html>
