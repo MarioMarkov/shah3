@@ -9,29 +9,406 @@ section{
 
 body{
     background-color: rgb(231, 240, 237);
-    background-image: url(pics/back3.jpg);
+    background-image: url(pics/back4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .titleName {
-    font-family: Verdana, Tahoma, sans-serif;
+    font-family: cursive;
     font-size: xx-large;
     font-display: swap;
 }
 
-.buttonLogIn {
-    line-height: 30px;
-    width: 80px;
-    font-size: 18px;
-    font-family: tahoma;
-    margin-top: 15px;
-    margin-right: 10px;
-    position: absolute;
-    top:0px;
-    right:3px;
+.header2 {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: x-large;
+    text-align: center;
+}
+
+.buttonLogIn.invisible {
+    display: none;
 }
 
 .messageBackground {
     background-color: rgb(250, 243, 233);
 }
+
+#backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+
+  #backdrop.visible {
+    display: block;
+    pointer-events: all;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 100;
+    width: 35%;
+    top: 10vh;
+    left: 32%;
+    display: none;
+  }
+  
+  .modal.visible {
+    display: block;
+    animation: fade-slide-in 0.3s ease-out forwards;
+  }
+  
+  .modal .modal__title {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #00329e;
+    background: #00329e;
+    color: white;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .modal .modal__content {
+    padding: 10px;
+    width: 250px;
+    height: 30px;
+  }
+  
+  .modal .modal__actions {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #add-modal .modal__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  }
+
+  .when-logged {
+    line-height: 30px;
+    width: 200px;
+    font-size: 18px;
+    font-family: cursive;
+    margin-top: 15px;
+    margin-right: 1px;
+    position: absolute;
+    top:0px;
+    right:3px;
+    display: none;
+  }
+
+  .when-logged.visible {
+      display: block;
+  }
+
+  .modal-message {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+      display: none;
+  }
+
+  .modal .modal__message {
+    padding: 10px;
+    width: 250px;
+    height: 30px;
+  }
+
+  .publish-mssg.invisible {
+      display: none;
+  } 
+
+  .box {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  }
+
+  .publish_modal_textbox {
+    display: inline-block;
+    padding: 10px;
+    width: 850px;
+    height: 400px;
+  }
+
+  .publish_modal {
+    position: fixed;
+    z-index: 100;
+    width: 60%;
+    top: 10vh;
+    left: 15%;
+    display: none;
+  }
+
+  .publish_modal.visible {
+      display: block;
+      animation: fade-slide-in 0.3s ease-out forwards;
+  }
+
+  .publish_modal_buttons {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .text-box__mssg {
+      resize: none;
+      height: 400px;
+      width: 900px;
+  }
+
+  .w3-round-large {
+    white-space: pre-wrap;
+  }
+
+  .button {
+    pointer-events: auto;
+    cursor: pointer;
+    background: #e7e7e7;
+    border: none;
+    padding: 1.5rem 3rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 88px;
+    position:absolute;
+    top:0;
+    right:0;
+  }
+
+  .publish-mssg {
+    line-height: 15px;
+    width: 300px;
+    font-size: 18px;
+    font-family: tahoma;
+    margin-top: 260px;
+    margin-right: 10px;
+    position: absolute;
+    top:0px;
+    right:3px;
+  } 
+
+.button::before,
+.button::after {
+	position: absolute;
+  top: 0;
+  right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.btnInfo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 10%;
+  display: inline-block;
+}
+
+.button2 {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  margin-top: 172px;
+  margin-right: 80px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.button2::before,
+.button2::after {
+position: absolute;
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+}
+
+.btnContacts {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 10%;
+  display: none;
+}
+
+.button3 {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  margin-top: 92px;
+  margin-right: 80px;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.button3::before,
+.button3::after {
+position: absolute;
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+}
+
+
+  .button--pan {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 700;
+    border: 2px solid #000;
+    border-radius: 3rem;
+    overflow: hidden;
+    color: #fff;
+  }
+  
+  .button--pan span {
+    position: relative;
+    mix-blend-mode: difference;
+  }
+  
+  .button--pan::before {
+    content: '';
+    background: #000;
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+  }
+  
+  .button--pan:hover::before {
+    transform: translate3d(0,-100%,0);
+  }
+
+  .btn-cancel {
+  padding: .9rem 1.7rem;
+  color: var(--button-colour);
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  background: var(--button);
+  border: solid 1px var(--button-border);
+  box-shadow: inset 0 0 0 2px var(--colour-white);
+  margin-right: 1em;
+  }
+
+  .button--secondary {
+    --button: hsl(346, 100%, 60%);
+  --button-hover: hsl(346, 100%, 70%);
+  --button-active:  hsl(346, 100%, 80%);
+  --button-visited: hsl(346, 100%, 70%);
+  --button-colour: var(--colour-black);
+   --button-border: var(--colour-black);
+  }
+
+  .btn-cancel:hover {
+    text-decoration: underline;
+    background: var(--button-hover);
+    box-shadow: inset 0 0 0 4px var(--colour-white);
+  }
+  
+  .btn-cancel:active {
+    background: var(--button-active);
+  }
+  
+  .btn-cancel:visited {
+    background: var(--button-visited);
+  }
+
+  .btn-login.btn-publish{
+    --button: hsl(0, 0%, 12%);
+    --button-hover: hsl(0, 0%, 20%);
+    --button-active:  hsl(0, 0%, 30%);
+    --button-visited: hsl(0, 0%, 20%);
+    --button-colour: var(--colour-white);
+    --button-border: var(--colour-black);
+  }
+
+  .button--tertiary {
+    --button: hsl(0, 100%, 90%);
+    --button-hover: hsl(0, 100%, 94%);
+    --button-active:  hsl(0, 100%, 84%);
+    --button-visited: hsl(0, 100%, 94%);
+    --button-colour: var(--colour-black);
+     --button-border: var(--colour-black);
+  }
+
+  .btn-login {
+    padding: .9rem 1.7rem;
+    color: var(--button-colour);
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background: var(--button);
+    border: solid 1px var(--button-border);
+    box-shadow: inset 0 0 0 2px var(--colour-white);
+    margin-right: 1em;
+  }
+  
+  .btn-login:hover {
+    text-decoration: underline;
+    background: var(--button-hover);
+    box-shadow: inset 0 0 0 4px var(--colour-white);
+  }
+  
+  .btn-login:active {
+    background: var(--button-active);
+  }
+  
+  .btn-login:visited {
+    background: var(--button-visited);
+  }
+
+  .btn-publish {
+    padding: .9rem 1.7rem;
+    color: var(--button-colour);
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background: var(--button);
+    border: solid 1px var(--button-border);
+    box-shadow: inset 0 0 0 2px var(--colour-white);
+    margin-right: 1em;
+  }
+  
+  .btn-publish:hover {
+    text-decoration: underline;
+    background: var(--button-hover);
+    box-shadow: inset 0 0 0 4px var(--colour-white);
+  }
+  
+  .btn-publish:active {
+    background: var(--button-active);
+  }
+  
+  .btn-publish:visited {
+    background: var(--button-visited);
+  }
